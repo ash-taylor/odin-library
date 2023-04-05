@@ -1,0 +1,170 @@
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: beige;
+    width: 100%;
+    text-align: center;
+    box-shadow: grey 0px 2px 2px;
+}
+
+table,
+th,
+td {
+    padding: 5px;
+}
+
+table {
+    width: 50%;
+    border: 3px solid gray;
+    text-align: center;
+    border-collapse: collapse;
+    margin: 15px;;
+}
+
+th {
+    border: 3px solid gray;
+    background-color: bisque;
+}
+
+td {
+    border: 1px solid gray;
+    background-color: aliceblue;
+}
+
+.add-book {
+    border-radius: 10px;
+    width: 5%;
+}
+
+.delete-book-button {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color:indianred;
+    color: white;
+    border: none;
+}
+
+.read-status-button {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: khaki; 
+    color: black;
+    border: none;
+}
+
+.delete-book-button:hover {
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: white;
+    color: indianred;
+    border: none;
+}
+
+form {
+    box-sizing: border-box;
+    width: 20%;
+    background-color: beige;
+    box-shadow: grey 0px 2px 2px;
+    margin: 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+input[type=text] {
+    margin: 5px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid brown;
+}
+
+input[type=text]:focus {
+    background-color: wheat;
+}
+
+input[type=submit] {
+    background-color: cadetblue;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+/* container */
+label {
+    position: relative;
+    /* to contain absolute elements */
+    padding-left: 30px;
+    /* free space for custom checkbox */
+    cursor: pointer;
+}
+
+/* hide default checkbox  */
+label input[type=checkbox] {
+    position: absolute;
+    /* prevent taking any space */
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* custom checkbox */
+label span {
+    position: absolute;
+    /* position to the free space in <label> */
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: #ddd;
+    transition: .3s background-color;
+    /* slight transition */
+}
+
+/* the check icon */
+label span:after {
+    content: "";
+    position: absolute;
+    display: none;
+
+    /* check icon */
+    left: 6px;
+    top: 2px;
+    width: 4px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+label:hover span {
+    background-color: #ccc;
+}
+
+/**** Here's the trick ***/
+label input:checked~span {
+    background-color: #2eaadc;
+}
+
+label input:checked~span:after {
+    display: block;
+}
